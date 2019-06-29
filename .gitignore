@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.DS_Store
+
+# Project files
+models/
+data/
+results/
+main.py
