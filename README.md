@@ -1,3 +1,5 @@
+<a><img src="./TextAnalyser.png" width="125" height="125" align="right" /></a> 
+
 # TextAnalyser
 Natural Language Processing (NLP) components for analysing and extracting information from text.
 
