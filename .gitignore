@@ -110,3 +110,5 @@ models/
 data/
 results/
 main.py
+scripts/
+utils/
