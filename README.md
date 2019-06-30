@@ -4,14 +4,17 @@ Natural Language Processing (NLP) components for analysing and extracting inform
 ### Installation
 ```
 conda create -n textanalyser python=3.6
-conda install --file requirements.txt
+conda activate textanalyser
+python setup.py install
 ```
 
 ### Supported NLP components
 - [Topic Modeling](./TextAnalyser/TopicModeling.py) (NMF, LDA and LSI)
+- [Email Spam Classifier](./TextAnalyser/SpamClassifier.py)
 
 ### Tutorials
 Tutorials can be found in [examples](./examples)
 
 ### Updates:
-29/06/2019: Added Topic Modeling (NMF, LDA and LSI)
+- 30/06/2019: Added Email Spam Classifier
+- 29/06/2019: Added Topic Modeling (NMF, LDA and LSI)
