@@ -18,6 +18,8 @@ from sklearn.svm import SVC, LinearSVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 
+from sklearn.model_selection import GridSearchCV
+
 from sklearn.externals import joblib
 
 nltk.download('punkt')
@@ -83,7 +85,7 @@ class SpamClassifier():
     def identity(self, words):
         return words
 
-    def train(self, X_train, y_train):
+    def train(self, X_train, y_train, grid_search=False):
         mnb      = MultinomialNB()
         lin_svm  = LinearSVC()
         svm      = SVC()
@@ -106,6 +108,18 @@ class SpamClassifier():
                                                       ])),
                          ('clf', eclf)
                          ])
+        if grid_search:
+            param_grid = [{'clf__lr__C': [0.01, 0.1, 1, 10, 100],
+                           'clf__mnb__alpha': [0.1, 1.0, 10.0, 100.0]
+                           }]
+
+            voting_model = GridSearchCV(pipeline,
+                                        param_grid=param_grid,
+                                        scoring='accuracy',
+                                        cv=5)
+            print(voting_model.best_params_)
+            print(voting_model.best_score_)
+            pipeline = voting_model
 
         pipeline.fit(X_train, y_train)
 
