@@ -111,4 +111,6 @@ data/
 results/
 main.py
 scripts/
+data_helpers/
 utils/
+todo.txt
