@@ -6,4 +6,4 @@ numpy==1.16.4
 spacy==2.1.4
 gensim==3.4.0
 beautifulsoup4==4.7.1
-scikit_learn==0.21.2
+scikit_learn==1.5.0
